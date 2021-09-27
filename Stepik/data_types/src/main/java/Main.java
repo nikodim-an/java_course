@@ -1,4 +1,5 @@
 import ru.khan.dataTypes.Arrays_example;
+import ru.khan.dataTypes.Collections_example;
 import ru.khan.dataTypes.Enumerators;
 
 public class Main {
@@ -10,8 +11,8 @@ public class Main {
         Enumerators.enumerateUse();
         // массивы
         Arrays_example.arrayUse();
-        // списки
-
+        // коллекции
+        Collections_example.coollections();
         // справочники
     }
 }
