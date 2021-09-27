@@ -1,3 +1,4 @@
+import ru.khan.dataTypes.Arrays_example;
 import ru.khan.dataTypes.Enumerators;
 
 public class Main {
@@ -8,7 +9,7 @@ public class Main {
         // перечисления
         Enumerators.enumerateUse();
         // массивы
-
+        Arrays_example.arrayUse();
         // списки
 
         // справочники
