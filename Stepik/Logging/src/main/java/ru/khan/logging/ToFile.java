@@ -10,9 +10,11 @@ public class ToFile {
         // Создать регистратор
         Logger logger = Logger.getLogger("Логгер в файл");
         try {
-            FileHandler fileHandler = new FileHandler("/home/alex/DeskTop/log.log", 5 * 1024 * 1024, 5);
+            //FileHandler fileHandler = new FileHandler("/home/alex/DeskTop/log.log", 5 * 1024 * 1024, 5); // пишет в несколько файлов и по достижении максимального размера начинает новый с новым номером
+            FileHandler fileHandler = new FileHandler("/home/alex/DeskTop/log.log");
+            fileHandler.setFormatter(new SimpleFormatter()); // форматтер
             logger.addHandler(fileHandler);
-            logger.setLevel(Level.FINEST);
+            logger.setLevel(Level.ALL);
         } catch (Exception e) {
             System.err.println("Failed to configure logging to file");
         }
