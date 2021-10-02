@@ -14,5 +14,10 @@ public class Main {
         // коллекции
         Collections_example.coollections();
         // справочники
+
+        // массивы, сортировка слиянием
+        int[] a1 = {0,4,8};
+        int[] a2 = {3,6,10};
+        System.out.println(Arrays_example.mergeArrays(a1,a2));
     }
 }
