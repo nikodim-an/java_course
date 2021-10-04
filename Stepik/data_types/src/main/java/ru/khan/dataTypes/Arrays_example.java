@@ -24,6 +24,7 @@ public class Arrays_example {
         // многомерные массивы - аналогичны аналогичным в других языках
     }
 
+
     public static int[] mergeArrays(int[] a1, int[] a2) {
         int[] a3 = new int[a1.length + a2.length];
 
