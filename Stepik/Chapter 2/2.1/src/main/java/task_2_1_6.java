@@ -26,7 +26,7 @@ Sample Output 3:
 true
 
 */
-
+import javax.print.
 
 public class task_2_1_6 {
     public static boolean booleanExpression(boolean a, boolean b, boolean c, boolean d) {
