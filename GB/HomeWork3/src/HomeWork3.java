@@ -1,59 +1,85 @@
 /**
- *   Java 1. Домашняя работа №3
- *   @author : Хильченко А.Н.
- *   @version : от 08.10.2021
+ * Java 1. Домашняя работа №3
  *
+ * @author : Хильченко А.Н.
+ * @version : от 12.10.2021
+ *
+ * совместный вывод тестов:
+
+  1: [0, 0, 1, 1, 0, 1, 0, 0, 1, 1]
+  2: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]
+  3: [2, 10, 6, 4, 11, 8, 10, 4, 8, 8, 9, 2]
+  4: для размерности массива 5
+    [1, 0, 0, 0, 1]
+    [0, 1, 0, 1, 0]
+    [0, 0, 1, 0, 0]
+    [0, 1, 0, 1, 0]
+    [1, 0, 0, 0, 1]
+  5: [33, 33, 33, 33, 33]
+  6:
+    min = -1
+    max = 99
+  7:
+    для [2, 2, 2, 1, 2, 2, 10, 1] — true
+    для [2, 2, 2, 1, 2, 2, 99, 1] — false
+  8: для [1, 2, 3, 4, 5, 6, 7, 8]
+    правый сдвиг на 3 — [6, 7, 8, 1, 2, 3, 4, 5]
+    левый  сдвиг на 3 — [1, 2, 3, 4, 5, 6, 7, 8]
+
  */
+
+import java.util.Arrays;
 
 public class HomeWork3 {
 
-    //
-    //  Контроль работоспособности методов и их вызов для проверки осуществляется из внешнего класса.
-    //  тестовый класс является отладочным, поэтому в репозиторий не попадет
-    //
-
+    // Контроль работоспособности методов и их вызов для проверки осуществляется из точки входа.
+    // Поскольку в заданиях формально не предполагается передача и возврат значений, но они нужны для контроля
+    // работоспособности кода, будем считать, что каждый метод принимает и возвращает значения.
+    // - в качестве входящих значений будем использовать явно заданные в задании,
+    // - в качестве исходящих — значения полученные на основе логических рассуждений.
+    // Теоретически (а иногда и более выгодно практически) значения из методов можно вообще не возвращать,
+    // а увидеть их в отладчике в окне контроля значений переменных…
 
     /*
     Задание 1
     Задать целочисленный массив, состоящий из элементов 0 и 1. Например: [ 1, 1, 0, 0, 1, 0, 1, 1,0, 0 ].
     С помощью цикла и условия заменить 0 на 1, 1 на 0;
     */
-    public static void task1 () {
-        int[] array = {1,1,0,0,1,0,1,1,0,0};
-        for (int i=0; i<array.length; i++) {
-            if (array[i]==1) {
-                array[i]=0;
+    static int[] task1(int[] array) {
+        // указанный в задании массив пойдет входящим значением, контроль вывода при вызове.
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == 1) {
+                array[i] = 0;
             } else {
-                array[i]=1;
+                array[i] = 1;
             }
         }
-        // в отладчике видно, что array = [0, 0, 1, 1, 0, 1, 0, 0, 1, 1]
+        return array;
     }
 
     /*
     Задание 2
     Задать пустой целочисленный массив длиной 100. С помощью цикла заполнить его значениями 1 2 3 4 5 6 7 8 ... 100;
     */
-    public static void task2() {
+    static int[] task2() {
         int[] array = new int[100];
-        for (int i=1; i<=100; i++) {
-            array[i-1]=i;
+        for (int i = 1; i <= 100; i++) {
+            array[i - 1] = i;
         }
-        // на этом брейкпоинте array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]
+        return array;
     }
 
     /*
     Задание 3
     Задать массив [ 1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1 ] пройти по нему циклом, и числа меньшие 6 умножить на 2;
      */
-    public static void task3() {
-        int[] array = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
-        for (int i=0; i<array.length; i++) {
-            if (array[i]<6) {
-                array[i]*=2;
+    static int[] task3(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < 6) {
+                array[i] *= 2;
             }
         }
-        // в этой точке array = [2, 10, 6, 4, 11, 8, 10, 4, 8, 8, 9, 2]
+        return array;
     }
 
     /*
@@ -61,30 +87,21 @@ public class HomeWork3 {
     Создать квадратный двумерный целочисленный массив (количество строк и столбцов одинаковое),
     и с помощью цикла(-ов) заполнить его диагональные элементы единицами (можно только одну из диагоналей,
     если обе сложно).
-     */
-    public static void task4(){
-        int size = 8; // размерность массива
+    */
+
+    static int[][] task4(int size) { // на входе засылаем размерность массива
         // Заполнять буду сразу обе его диагонали
         int[][] array = new int[size][size];
-        for (int width=0; width<size; width++) {
-            for (int height=0; height<size; height++) {
+        for (int width = 0; width < size; width++) {
+            for (int height = 0; height < size; height++) {
                 if (width == height) { // заполнение главной диагонали
                     array[width][height] = 1;
-                } else if (width == (size-1-height)) { // заполнение второстепенной диагонали
+                } else if (width == (size - 1 - height)) { // заполнение второстепенной диагонали
                     array[width][height] = 1;
                 }
             }
         }
-        /* в отладчике видно, что array =
-        1 0 0 0 0 0 0 1
-        0 1 0 0 0 0 1 0
-        0 0 1 0 0 1 0 0
-        0 0 0 1 1 0 0 0
-        0 0 0 1 1 0 0 0
-        0 0 1 0 0 1 0 0
-        0 1 0 0 0 0 1 0
-        1 0 0 0 0 0 0 1
-        */
+        return array;
     }
 
 
@@ -93,11 +110,9 @@ public class HomeWork3 {
     Написать метод, принимающий на вход два аргумента: len и initialValue, и возвращающий одномерный массив
     типа int длиной len, каждая ячейка которого равна initialValue;
     */
-    public static int[] task5(int len, int initialValue){
+    static int[] task5(int len, int initialValue) {
         int[] result = new int[len];
-        for (int i=0; i<len; i++){
-            result[i]=initialValue;
-        }
+        Arrays.fill(result, initialValue);
         return result;
     }
 
@@ -105,19 +120,20 @@ public class HomeWork3 {
     Задача 6
     Задать одномерный массив и найти в нем минимальный и максимальный элементы
     */
-    public static void task6(){
-        int[] array = {0,1,3,4,5,6,7,8,-1,99};
+    static String task6() {
+        int[] array = {0, 1, 3, 4, 5, 6, 7, 8, -1, 99};
         int min = array[0];
         int max = array[0];
-        for (int i=1; i<array.length; i++){
-            if (min>array[i]) {
+        for (int i = 1; i < array.length; i++) {
+            if (min > array[i]) {
                 min = array[i];
             }
-            if (max<array[i]) {
+            if (max < array[i]) {
                 max = array[i];
             }
         }
-    // по показаниям отладчика в этой точке min=-1, max=99
+        String result = "  min = "+min+"\n  max = "+max;
+        return result;
     }
 
     /*
@@ -126,25 +142,24 @@ public class HomeWork3 {
     метод должен вернуть true, если в массиве есть место, в котором сумма левой и правой части
     массива равны.
      */
-    public static boolean task7(int[] array) {
+    static boolean task7(int[] array) {
         // контроль возвращаемого знаения в точке вызова
         int leftSide, rightSide;
-        for (int i=0; i<array.length; i++){
-            leftSide=0; rightSide=0;
-            for (int j=0; j<array.length; j++){
-                if (j<i) { // нестрого поскольку граница сразу за запятой, но до значения
-                    leftSide+=array[j];
+        for (int i = 0; i < array.length; i++) {
+            leftSide = 0;
+            rightSide = 0;
+            for (int j = 0; j < array.length; j++) {
+                if (j < i) { // нестрого поскольку граница сразу за запятой, но до значения
+                    leftSide += array[j];
                 } else {
-                    rightSide+=array[j];
+                    rightSide += array[j];
                 }
             }
-            if (leftSide==rightSide){
+            if (leftSide == rightSide) {
                 return true;
             }
         }
         return false;
-        // если заслать array = {2, 2, 2, 1, 2, 2, 10, 1};
-        // возвращается true, если заменить в массиве 10 на 99 — возвращается false
     }
 
     /*
@@ -160,56 +175,91 @@ public class HomeWork3 {
     /*
     Для решения задачи договоримся, что при положительных n осуществляем правый сдвиг, а при отрицательных - левый.
     Кроме того, напишем два вспомогательных метода leftShift и rightShift, осуществляющие сдвиг на 1 элемент, и
-    возвращающих «сдвинутый» массив. После этого задача становится тривиальной. И ниодного дополнительного массива,
-    поскольку мы работаем во вспомагательных методах с одним массивом.
+    возвращающих «сдвинутый» массив. После этого задача становится тривиальной.
     */
 
-    static int[] leftShift(int[] array){
+    static int[] leftShift(int[] array) {
         int new_value, buffer;
-        new_value=array[0];
-        for (int i=array.length-1; i>0; i-=2){
+        new_value = array[0];
+        for (int i = array.length - 1; i > 0; i -= 2) {
             buffer = array[i];
-            array[i]=new_value;
-            new_value = array[i-1];
-            array[i-1]=buffer;
+            array[i] = new_value;
+            new_value = array[i - 1];
+            array[i - 1] = buffer;
         }
         return array;
     }
 
-    static int[] rightShift(int[] array){
+    static int[] rightShift(int[] array) {
         int new_value, buffer;
-        new_value=array[array.length-1];
-        for (int i=0; i<array.length-1; i+=2){
+        new_value = array[array.length - 1];
+        for (int i = 0; i < array.length - 1; i += 2) {
             buffer = array[i];
-            array[i]=new_value;
-            new_value = array[i+1];
-            array[i+1]=buffer;
+            array[i] = new_value;
+            new_value = array[i + 1];
+            array[i + 1] = buffer;
         }
         return array;
     }
 
-    public static void task8(int[] array, int n) {
-        if (n==0) {
+    static void task8(int[] array, int n) {
+        // здесь и далее все преобразования будут напрямую отражаться на засланном массиве,
+        // поскольку он есть ссылочный тип.
+        if (n == 0) {
             return;
-        } else if (n>0) {
+        } else if (n > 0) {
             // сдвигаем в право n раз
-            for (int i=0; i<n; i++){
-                array = rightShift(array);
+            for (int i = 0; i < n; i++) {
+                rightShift(array);
             }
         } else {
             // сдвигаем в лево n раз
-            n*=(-1);
-            for (int i=0; i<n; i++){
-                array = leftShift(array);
+            n *= (-1);
+            for (int i = 0; i < n; i++) {
+                leftShift(array);
             }
         }
-        return;
-        /*
-        Если в метод заслать array = {1, 2, 3, 4, 5, 6, 7, 8}, то в этой точке
-        task8(arr, 3); // [6, 7, 8, 1, 2, 3, 4, 5] - правый сдвиг на три элемента
-        task8(arr, -3); // [1, 2, 3, 4, 5, 6, 7, 8] - левый сдвиг на три элемента
-        в отоге получили исходный массив, а значит метод работает правильно.
-        */
+        return; // ничего не возвращаю… все что нужно уже вернулось…
+    }
+
+    public static void main(String[] args) {
+        // тест к заданию 1
+        int[] arr1 = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
+        System.out.println("1: " + Arrays.toString(task1(arr1))); // [0, 0, 1, 1, 0, 1, 0, 0, 1, 1]
+
+        // тест к заданию 2
+        System.out.println("2: " + Arrays.toString(task2()));     // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]
+
+        // тест к заданию 3
+        int[] arr3 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        System.out.println("3: " + Arrays.toString(task3(arr3))); // [2, 10, 6, 4, 11, 8, 10, 4, 8, 8, 9, 2]
+
+        // тест к заданию 4
+        System.out.println("4: для размерности массива 5");
+        for (int[] i : task4(5)) { // передал размерность заполняемго массива
+            System.out.println("  " + Arrays.toString(i)); // массив массивов заполненный нулями с единицами на главной и второстепенной диагоналях
+        }
+
+        // тест к заданию 5
+        System.out.println("5: "+Arrays.toString(task5(5, 33))); //  [33, 33, 33, 33, 33]
+
+        // тест к заданию 6
+        System.out.println("6: \n"+task6()); // min = -1, max = 99
+
+        // тест к заданию 7
+        int[] arr7 = {2, 2, 2, 1, 2, 2, 10, 1};
+        System.out.println("7:");
+        System.out.println("  для "+Arrays.toString(arr7)+" — "+task7(arr7));  // для [2, 2, 2, 1, 2, 2, 10, 1] — true
+        arr7[6] = 99;
+        System.out.println("  для "+Arrays.toString(arr7)+" — "+task7(arr7));  // для [2, 2, 2, 1, 2, 2, 99, 1] — false
+        // тест к заданию 8
+        int[] arr8 = {1, 2, 3, 4, 5, 6, 7, 8};
+        // работаю с одним массивом, после последовательного сдвига в обе стороны должен получиться исходный массив.
+        System.out.println("8: для "+Arrays.toString(arr8));
+        task8(arr8, 3);
+        System.out.println("  правый сдвиг на 3 — "+Arrays.toString(arr8)); // [6, 7, 8, 1, 2, 3, 4, 5]
+        task8(arr8, -3);
+        System.out.println("  левый  сдвиг на 3 — "+Arrays.toString(arr8)); // [1, 2, 3, 4, 5, 6, 7, 8]
     }
 
 }
