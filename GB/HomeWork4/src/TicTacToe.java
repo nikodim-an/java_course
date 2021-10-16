@@ -144,32 +144,26 @@ class TicTacToe {
         }
         // добавлю строки, эквивалентные линиям параллельным диагоналям
         // «отсекать» строки, длина которых меньше выигрышной ситуации алгоритмически не буду - сложность математического алгоритма в этом случае возрастает в разы, достаточно ппросто не добавлять те элементы которые длиной меньше выигрышной комбинации
-        for (int l = ((-1) * MAP_SIZE) + 1; l < MAP_SIZE; ++l) { // выборка линий, параллельных главной диагонали
-            String line = "";
+        for (int l = ((-1) * MAP_SIZE) + 1; l < MAP_SIZE; ++l) { // выборка линий, параллельных главной и второстепенной диагоналям
+            String lineMain = "";       // выборка линий, параллельных главной диагонали
+            String lineSecondary = "";  // выборка линий, параллельных второстепенной диагонали
             for (int i = 0; i < MAP_SIZE - Math.abs(l); ++i) {
                 if (l <= 0) {
-                    line += map[i][i - l];
+                    lineMain += map[i][i - l];
+                    lineSecondary += map[MAP_SIZE - 1 - i][i - l];
                 } else {
-                    line += map[i + l][i];
+                    lineMain += map[i + l][i];
+                    lineSecondary += map[MAP_SIZE - 1 - i - l][i];
                 }
             }
-            if (line.length() >= WIN_SERIES) {
-                series.add(line);
+            if (lineMain.length() >= WIN_SERIES) { // отсек все строки что меньше выигрышной серии
+                series.add(lineMain);
+            }
+            if (lineSecondary.length() >= WIN_SERIES) {
+                series.add(lineSecondary);
             }
         }
-        for (int l = ((-1) * MAP_SIZE) + 1; l < MAP_SIZE; ++l) { // выборка линий, параллельных второстепенной диагонали
-            String line = "";
-            for (int i = 0; i < MAP_SIZE - Math.abs(l); ++i) {
-                if (l <= 0) {
-                    line += map[MAP_SIZE - 1 - i][i - l];
-                } else {
-                    line += map[MAP_SIZE - 1 - i - l][i];
-                }
-            }
-            if (line.length() >= WIN_SERIES) {
-                series.add(line);
-            }
-        }
+
         // получу строку с выигрышной комбинацией для проверки ее вхождения в выборку
         String win_combination = "";
         for (int i = 0; i < WIN_SERIES; i++) {
