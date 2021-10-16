@@ -25,11 +25,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Application.6 4">
+  <component name="RunManager" selected="Application.3×3">
     <configuration name="3×3" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="TicTacToe" />
       <module name="TicTacToe" />
