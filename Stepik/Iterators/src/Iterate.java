@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.ListIterator;
 
@@ -25,6 +26,23 @@ public class Iterate {
             iterator2.set("!!!!");  // изменение итерируемого объекта
         }
         System.out.println(sList);
+
+        int[] intArray = {1,2,3,4,5,6,7}; // итерация по массиву
+        Iterator i = Arrays.stream(intArray).iterator();
+        while (i.hasNext()){
+            System.out.println(i.next());
+        }
+        String val = "ldskj fs dflksd jf sdf\nspodf psod if\nsdfsdfsdf";
+        Iterator i1 = val.chars().iterator(); // итерация по кодам символов
+        while (i1.hasNext()){
+            System.out.println(i1.next());
+        }
+        Iterator i2 = val.lines().iterator(); // итерация по строкам <по \n>
+        while (i2.hasNext()){
+            System.out.println(i2.next());
+        }
+
+
     }
 
 }
