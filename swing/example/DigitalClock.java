@@ -18,7 +18,7 @@ public class DigitalClock {
     ClockLabel timeLable = new ClockLabel("time");
     ClockLabel dayLable = new ClockLabel("day");
  
-    JFrame.setDefaultLookAndFeelDecorated(true);
+    //JFrame.setDefaultLookAndFeelDecorated(true);
     JFrame f = new JFrame("Digital Clock");
     f.setSize(300,150);
     f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

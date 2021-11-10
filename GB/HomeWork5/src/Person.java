@@ -32,7 +32,7 @@ class Person {
     а преобразование класса в строку - сделать там, где это положено - т.е в методе toString
     */
     public void print() {
-        System.out.println(this.toString());
+        System.out.println(this);
     }
 
     public String toString() {
