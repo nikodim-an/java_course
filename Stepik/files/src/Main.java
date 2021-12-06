@@ -27,7 +27,7 @@ public class Main {
         File file = new File(PATH);
         if (!file.exists()) {
             System.out.println("Файла не существует");
-            file.createNewFile();
+            //file.createNewFile();
         }
 
     }
