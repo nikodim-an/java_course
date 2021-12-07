@@ -50,5 +50,17 @@ public class Lists {
         myList.add(new myClass("ТРИ",1,333));
         System.out.println(myList);
 
+        // способы перебора
+        for (int i=0; i<myStrings.size();i++){  // по индексу
+            System.out.println(myStrings.get(i));
+        }
+
+        for (String i: myStrings) { // по значению
+            System.out.println(i);
+        }
+
+        // через встроенный итератор и анонимную функцию
+        myStrings.forEach((i)-> System.out.println(i));
+
     }
 }
