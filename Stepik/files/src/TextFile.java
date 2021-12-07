@@ -9,6 +9,7 @@
  *      в новый файл. ИМена файлов указаны в константах *
  */
 
+import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -63,10 +64,36 @@ public class TextFile {
         }
     }
 
+    public static void readFileByLines(){
+        // чтение файла построчно
+        textBuffer = "";
+            // здесь может быть другой объект для хранения текста
+        try {
+            FileReader f_reader = new FileReader(INPUT_FILE);
+            BufferedReader reader = new BufferedReader(f_reader);
+            String line = reader.readLine();
+            while (line!= null) {
+                System.out.println(line);
+                line = reader.readLine();
+                textBuffer+=line+'\n';
+                    // Считанная строка не содержит возврата строки
+            }
+        } catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }
+    }
+
     public static void main(String[]args) {
+        // Чтение посимвольно
         readFile();
-        System.out.println("Полученный при чтении массив буквов: \n" + textBuffer);
+        System.out.println("Полученный при чтении посимвольно массив буквов: \n" + textBuffer);
         // трындец короче
+
+        // Чтение построчно
+        readFileByLines();
+        System.out.println("Полученнная при чтении построчно строка: \n" + textBuffer);
+
+        // Запись
         writeFile("Ахренеть можно\n");
         writeFile("Херня получается\n");
         writeFile("Как будто нет возможности работать с тектовыми фалами нормально\n");
