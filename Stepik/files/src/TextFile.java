@@ -83,7 +83,7 @@ public class TextFile {
         }
     }
 
-    public static void main(String[]args) {
+        public static void main(String[]args) {
         // Чтение посимвольно
         readFile();
         System.out.println("Полученный при чтении посимвольно массив буквов: \n" + textBuffer);
@@ -92,6 +92,7 @@ public class TextFile {
         // Чтение построчно
         readFileByLines();
         System.out.println("Полученнная при чтении построчно строка: \n" + textBuffer);
+
 
         // Запись
         writeFile("Ахренеть можно\n");
