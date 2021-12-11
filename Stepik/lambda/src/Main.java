@@ -29,8 +29,13 @@ public class Main {
         for (int i = 0; i < 100; i++) {
             System.out.println(alpha.getValue(i));
             };
+        System.out.println("-----------------------------------------------");
+        MyInterface beta = i->i*i;
+        for (int i = 0; i < 20; i++) {
+            System.out.println(beta.getValue(i));
         }
 
-
     }
+
+}
 
