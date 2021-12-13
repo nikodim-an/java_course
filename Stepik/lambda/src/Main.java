@@ -17,7 +17,7 @@ interface MyInterface {
 
 
 public class Main {
-    static int[] intArray = {1,2,4,3,6,7,8,10,333};
+    static Integer[] intArray = {1,2,4,3,6,7,8,10,333};
     static int intValue = 555;
     static int x = 10;
     String strValue = "мама мыла раму";
@@ -34,6 +34,14 @@ public class Main {
         for (int i = 0; i < 20; i++) {
             System.out.println(beta.getValue(i));
         }
+
+        // пример использования квадроточия
+        System.out.println("-----------------------------------------------");
+        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(intArray));
+        list.forEach(System.out::println);
+        System.out.println("-----------------------------------------------");
+        list.forEach(x -> System.out.println(x));
+
 
     }
 
