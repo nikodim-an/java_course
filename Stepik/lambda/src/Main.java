@@ -40,8 +40,7 @@ public class Main {
         ArrayList<Integer> list = new ArrayList<>(Arrays.asList(intArray));
         list.forEach(System.out::println);
         System.out.println("-----------------------------------------------");
-        list.forEach(x -> System.out.println(x));
-
+        list.forEach(x -> System.out.println(x)); // интерфейс тут не создается!!!
 
     }
 
