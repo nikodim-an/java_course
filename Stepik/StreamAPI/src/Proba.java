@@ -8,7 +8,7 @@
  *      Тут все что удалось понять «сходу», изучив один мануал из многих, но с хабра.
  */
 
-import java.util.*;
+//import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -45,6 +45,8 @@ public class Proba {
                 .collect(Collectors.toList()); // для спарвочника - toMap, для множества toSet …
         colList.forEach(System.out::println);
         // можно вернуть и другие коллекции, но это уже несколько геморойно…
+
+        HashMap ne = new HashMap()
     }
 
 }
