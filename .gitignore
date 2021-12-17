@@ -3,3 +3,6 @@ out
 META-INF
 *.class
 stend.java
+stend_*.java
+target/
+*.iml
