@@ -88,6 +88,7 @@ public class Mian {
         HashMap<Integer, Car> newMap = new HashMap();
         newMap = objectMapper.readValue(mapFromJSON, newMap.getClass());
             // а это тоже костыльно, но не так сильно
+
         System.out.println(newMap);
 
 
