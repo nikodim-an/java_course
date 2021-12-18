@@ -9,5 +9,8 @@ package mvc; /**
 
 import java.util.*;
 
+class WeatherData<Long, >
+
 public class WeatherModel {
+
 }
