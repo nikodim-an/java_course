@@ -9,11 +9,17 @@
  *      командную строку.
  */
 
-import java.util.*;
+import java.io.IOException;
+import view.WeatherViewer;
+
+import controller.WeatherController;
 
 public class startClass {
     public static void main(String[] args) throws IOException {
-        System.out.println("Все запустилось нормально");
+        System.out.println(WeatherController.getWeatherFromCity("Биробиджан"));
+        System.out.println("-----------------------------------------------");
+        // тут нужно запустить процедуру из просмотра
+        WeatherViewer.processCity();
 
     }
 

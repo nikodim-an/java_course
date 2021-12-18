@@ -7,7 +7,8 @@
  * @comments :
  */
 
-package data;
+package model;
+
 import java.util.*;
 
 public class WeatherResponse {      // Полный ответ по форме 5 дневного

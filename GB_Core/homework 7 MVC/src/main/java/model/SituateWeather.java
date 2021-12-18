@@ -1,4 +1,4 @@
-package data; /**
+/**
  * Класс SituateWeather
  *
  * @author : Хильченко А.Н
@@ -6,6 +6,7 @@ package data; /**
  * @date : 18.12.2021
  * @comments :
  */
+package model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.*;

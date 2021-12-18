@@ -1,4 +1,4 @@
-package data; /**
+/**
  * Класс City
  *
  * @author : Хильченко А.Н
@@ -7,6 +7,7 @@ package data; /**
  * @comments :
  */
 
+package model;
 import java.util.*;
 
 public class City{             // текущий город
