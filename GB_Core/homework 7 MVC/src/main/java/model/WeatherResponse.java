@@ -62,11 +62,21 @@ public class WeatherResponse {      // Полный ответ по форме 5
         this.city = city;
     }
 
+    public boolean isEmpty(){
+        if (this.city==null||this.list==null){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     // преобразование в строку
     @Override
     public String toString() {
-        return "Ответ сервера погоды:\n" +
+        if (isEmpty()) return "";
+        String result = "Ответ сервера погоды:\n" +
                 "\tМесто: " + city + ".\n\tПрогноз погоды на 5 дней (детализация 3 часа):\n"+ list;
+        return result.replace("[","").replace("]","");
     }
 }
 

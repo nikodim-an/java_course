@@ -54,6 +54,6 @@ public class Weather{
 
     @Override
     public String toString() {
-        return description;     // переводить на русский язык не стал - задача состояит не в этом.
+        return description;
     }
 }

@@ -103,9 +103,12 @@ public class SituateWeather{   // погодная ситуация
 
     @Override
     public String toString() {
-        return "\t\t" + dt_txt +
-                ",\tсредняя температура "+main.getTemp()+",\t ветер "+wind.getSpeed()+"м/с"+ ",\t состояние - "+weather+
-                "\n";
-        // а больше я не знаю что вывести - но вывести могу все что угодно из пришедшего.
+        String result = "\n\t\t" + dt_txt +
+                ": \tсредняя температура "+
+                main.getTemp()+",\t ветер "+
+                wind.getSpeed()+"м/с"+ ",\t состояние - \""+
+                weather+
+                "\"";
+        return result;
     }
 }

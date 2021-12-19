@@ -29,7 +29,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>startClass</mainClass>
+                            <mainClass>Start</mainClass>
                             <classpathPrefix>dependency-jar</classpathPrefix>
                         </manifest>
                     </archive>
