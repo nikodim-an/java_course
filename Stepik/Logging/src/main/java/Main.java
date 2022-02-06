@@ -7,8 +7,9 @@ import ru.khan.logging.*;
 public class Main {
     // Этот лог будет выводиться в окно терминала (консоль)
     public static void main(String[] args) {
-        ToConsole.main();
-        ToFile.main();
-        LoggerInterface.main();
+        //ToConsole.main();
+        //ToFile.main();
+        //LoggerInterface.main();
+        WithSLF4J.foo();
     }
 }
